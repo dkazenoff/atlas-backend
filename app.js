@@ -13,6 +13,8 @@ let bodyParser = require('body-parser');    //Extract data from Express
 app.use(cors())
 
 let datas = require('./routes/datas');
+let encryption = require('./routes/encryption');
+let kyc = require('./routes/kyc');
 
 app.get('/dummy0', (req, res) => res.send('Dumb Response from Express Server! 2!'))
 
@@ -32,6 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use('/datas', datas);
+app.use('/encryption', encryption);
+app.use('/kyc', kyc);
 console.log("Server running on 8080")
 
 
